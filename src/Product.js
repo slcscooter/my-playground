@@ -2,8 +2,10 @@ import React, { useState } from "react";
 
 export default function Product(props) {
   const [productCount, setProductCount] = useState(0);
+  const [available, setAvailable] = useState(props.details.stock);
   function handleIncreaseCount() {
     setProductCount(productCount + 1);
+    setAvailable(available - 1);
   }
   function handleDecreaseCount() {
     setProductCount(productCount - 1);
@@ -25,7 +27,11 @@ export default function Product(props) {
           -
         </button>
         <h3 className="product-count">{productCount}</h3>
-        <button className="product-add" onClick={handleIncreaseCount}>
+        <button
+          className="product-add"
+          disabled={available === 0}
+          onClick={handleIncreaseCount}
+        >
           +
         </button>
       </div>

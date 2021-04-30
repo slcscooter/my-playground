@@ -12,9 +12,11 @@ function App() {
       </button>
     );
   }
+
   function PromptLogin() {
     return <h2>Please login</h2>;
   }
+
   function Login() {
     return (
       <button className="btn btn-primary" onClick={() => setLoggedIn(true)}>
@@ -22,6 +24,7 @@ function App() {
       </button>
     );
   }
+
   if (loggedIn) {
     return (
       <>
