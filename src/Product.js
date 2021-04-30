@@ -16,7 +16,10 @@ export default function Product(props) {
       <img width="50" src={props.details.image} alt="" />
       <div className="product-info">
         <h2>{props.details.name}</h2>
-        <p>{props.details.description}</p>
+        <p>
+          {props.details.description}. ({available} / {props.details.stock})
+          left.
+        </p>
       </div>
       <div className="product-buttons">
         <button
